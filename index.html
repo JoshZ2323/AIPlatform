@@ -17,23 +17,12 @@
       margin: 0;
     }
 
-    #spaceship-controls {
+    #data-sources {
       display: flex;
-      flex-direction: row;
+      flex-wrap: wrap;
       gap: 10px;
       align-items: center;
-    }
-
-    #data-inputs {
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-      align-items: center;
-    }
-
-    input {
-      padding: 10px;
-      font-size: 16px;
+      justify-content: center;
     }
 
     button {
@@ -50,82 +39,43 @@
       background-color: #2980b9;
     }
 
-    #result-container {
+    #ask-question {
       margin-top: 20px;
-    }
-
-    #answer-container {
-      margin-top: 20px;
-      text-align: center;
     }
   </style>
 </head>
 <body>
   <div>
     <h1 style="text-align: center;">AI Business Intelligence</h1>
-    <div id="data-inputs">
-      <input type="text" placeholder="Data Source 1">
-      <input type="text" placeholder="Data Source 2">
-      <input type="text" placeholder="Data Source 3">
-      <input type="text" placeholder="Data Source 4">
-      <input type="text" placeholder="Data Source 5">
-      <input type="text" placeholder="Data Source 6">
-      <input type="text" placeholder="Data Source 7">
-      <input type="text" placeholder="Data Source 8">
-      <input type="text" placeholder="Data Source 9">
-      <input type="text" placeholder="Data Source 10">
+    <div id="data-sources">
+      <button onclick="connectToDataSource('Data Source 1')">Data Source 1</button>
+      <button onclick="connectToDataSource('Data Source 2')">Data Source 2</button>
+      <button onclick="connectToDataSource('Data Source 3')">Data Source 3</button>
+      <button onclick="connectToDataSource('Data Source 4')">Data Source 4</button>
+      <button onclick="connectToDataSource('Data Source 5')">Data Source 5</button>
+      <button onclick="connectToDataSource('Data Source 6')">Data Source 6</button>
+      <button onclick="connectToDataSource('Data Source 7')">Data Source 7</button>
+      <button onclick="connectToDataSource('Data Source 8')">Data Source 8</button>
+      <button onclick="connectToDataSource('Data Source 9')">Data Source 9</button>
+      <button onclick="connectToDataSource('Data Source 10')">Data Source 10</button>
     </div>
-    <div id="spaceship-controls">
-      <button onclick="connectToDataSource('Data Source 1')">Connect 1</button>
-      <button onclick="connectToDataSource('Data Source 2')">Connect 2</button>
-      <button onclick="connectToDataSource('Data Source 3')">Connect 3</button>
-      <button onclick="connectToDataSource('Data Source 4')">Connect 4</button>
-      <button onclick="connectToDataSource('Data Source 5')">Connect 5</button>
-      <button onclick="connectToDataSource('Data Source 6')">Connect 6</button>
-      <button onclick="connectToDataSource('Data Source 7')">Connect 7</button>
-      <button onclick="connectToDataSource('Data Source 8')">Connect 8</button>
-      <button onclick="connectToDataSource('Data Source 9')">Connect 9</button>
-      <button onclick="connectToDataSource('Data Source 10')">Connect 10</button>
-    </div>
-    <div id="spaceship-controls">
+    <div id="ask-question">
       <button onclick="askQuestion()">Ask Question</button>
-    </div>
-    <div id="result-container">
-      <!-- Display results or insights here -->
-    </div>
-    <div id="answer-container">
-      <!-- Display NLP-generated answer here -->
     </div>
   </div>
 
   <script>
     function askQuestion() {
-      // Simplified NLP logic (replace with a real NLP library or service)
+      // Logic to ask a question
       const question = prompt('Ask a question:');
-      const answer = generateNLPAnswer(question);
-      
-      // Display the question and answer
-      document.getElementById('result-container').innerHTML = `<p>Question: ${question}</p>`;
-      document.getElementById('answer-container').innerHTML = `<p>Answer: ${answer}</p>`;
-    }
-
-    function generateNLPAnswer(question) {
-      // Replace this with actual NLP logic to generate an answer
-      // This is a placeholder, and you might need a real NLP library or API
-      const connectedData = getConnectedData(); // Assume you have a function to get connected data
-      return `NLP-generated answer based on data: ${connectedData} for '${question}'...`;
+      if (question) {
+        alert(`You asked: ${question}`);
+      }
     }
 
     function connectToDataSource(dataSource) {
-      // Implement the logic to connect to the specified data source
-      // Example: Display a message indicating the connection
-      document.getElementById('result-container').innerHTML = `<p>Connected to ${dataSource}</p>`;
-    }
-
-    function getConnectedData() {
-      // Implement the logic to fetch connected data from the selected data source
-      // Replace this with actual data retrieval logic
-      return 'Connected data';
+      // Logic to connect to data source
+      alert(`Connected to: ${dataSource}`);
     }
   </script>
 </body>
