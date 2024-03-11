@@ -41,6 +41,10 @@
     #result-container {
       margin-top: 20px;
     }
+
+    #answer-container {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -56,14 +60,26 @@
     <div id="result-container">
       <!-- Display results or insights here -->
     </div>
+    <div id="answer-container">
+      <!-- Display NLP-generated answer here -->
+    </div>
   </div>
 
   <script>
     function askQuestion() {
-      // Implement the logic to ask a question and generate insights using NLP
+      // Simplified NLP logic (replace with a real NLP library or service)
       const question = prompt('Ask a question:');
-      // Example: Display the result in the result-container
-      document.getElementById('result-container').innerHTML = `<p>AI Response: ${question} insights...</p>`;
+      const answer = generateNLPAnswer(question);
+      
+      // Display the question and answer
+      document.getElementById('result-container').innerHTML = `<p>Question: ${question}</p>`;
+      document.getElementById('answer-container').innerHTML = `<p>Answer: ${answer}</p>`;
+    }
+
+    function generateNLPAnswer(question) {
+      // Replace this with actual NLP logic to generate an answer
+      // This is a placeholder, and you might need a real NLP library or API
+      return `NLP-generated answer for '${question}'...`;
     }
 
     function connectToDataSource(dataSource) {
