@@ -74,6 +74,69 @@
 </head>
 <body>
 
+
+
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Business Intelligence</title>
+    <!-- Include any additional styles or libraries here -->
+    <style>
+        /* Add your spaceship UI styles here */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #spaceship {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <div id="spaceship"></div>
+    <h1>AI Business Intelligence</h1>
+    <form id="dataForm">
+        <label for="dataInput">Enter Data:</label>
+        <input type="text" id="dataInput" name="dataInput" required>
+        <button type="button" onclick="processData()">Generate Insights</button>
+    </form>
+
+    <!-- Include any additional scripts or libraries here -->
+    <script>
+        // Add your AI and data processing logic here
+        function processData() {
+            const inputData = document.getElementById('dataInput').value;
+
+            // Perform AI operations or data processing here
+            const aiResult = performAI(inputData);
+
+            // Display the result or take further actions
+            alert(`AI Result: ${aiResult}`);
+        }
+
+        // Hypothetical AI function
+        function performAI(input) {
+            // Replace this with your actual AI logic
+            return `AI processed: ${input}`;
+        }
+    </script>
+</body>
+</html>
+
         }
     </script>
 
