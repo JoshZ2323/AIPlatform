@@ -55,6 +55,10 @@
       <button onclick="connectToDataSource('DataSource1')">Connect to DataSource1</button>
       <button onclick="connectToDataSource('DataSource2')">Connect to DataSource2</button>
       <button onclick="connectToDataSource('DataSource3')">Connect to DataSource3</button>
+      <button onclick="connectToDataSource('DataSource4')">Connect to DataSource4</button>
+      <button onclick="connectToDataSource('DataSource5')">Connect to DataSource5</button>
+      <button onclick="connectToDataSource('DataSource6')">Connect to DataSource6</button>
+      <button onclick="connectToDataSource('DataSource7')">Connect to DataSource7</button>
       <!-- Add more buttons for additional data sources as needed -->
     </div>
     <div id="result-container">
@@ -79,13 +83,20 @@
     function generateNLPAnswer(question) {
       // Replace this with actual NLP logic to generate an answer
       // This is a placeholder, and you might need a real NLP library or API
-      return `NLP-generated answer for '${question}'...`;
+      const connectedData = getConnectedData(); // Assume you have a function to get connected data
+      return `NLP-generated answer based on data: ${connectedData} for '${question}'...`;
     }
 
     function connectToDataSource(dataSource) {
       // Implement the logic to connect to the specified data source
       // Example: Display a message indicating the connection
       document.getElementById('result-container').innerHTML = `<p>Connected to ${dataSource}</p>`;
+    }
+
+    function getConnectedData() {
+      // Implement the logic to fetch connected data from the selected data source
+      // Replace this with actual data retrieval logic
+      return 'Connected data';
     }
   </script>
 </body>
