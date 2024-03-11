@@ -59,16 +59,16 @@
   <div>
     <h1 style="text-align: center;">AI IoT Business Intelligence Platform</h1>
     <div id="data-sources">
-      <button onclick="connectToDataSource('Data Source 1')">Data Source 1</button>
-      <button onclick="connectToDataSource('Data Source 2')">Data Source 2</button>
-      <button onclick="connectToDataSource('Data Source 3')">Data Source 3</button>
-      <button onclick="connectToDataSource('Data Source 4')">Data Source 4</button>
-      <button onclick="connectToDataSource('Data Source 5')">Data Source 5</button>
-      <button onclick="connectToDataSource('Data Source 6')">Data Source 6</button>
-      <button onclick="connectToDataSource('Data Source 7')">Data Source 7</button>
-      <button onclick="connectToDataSource('Data Source 8')">Data Source 8</button>
-      <button onclick="connectToDataSource('Data Source 9')">Data Source 9</button>
-      <button onclick="connectToDataSource('Data Source 10')">Data Source 10</button>
+      <button onclick="selectDataSource('Data Source 1')">Data Source 1</button>
+      <button onclick="selectDataSource('Data Source 2')">Data Source 2</button>
+      <button onclick="selectDataSource('Data Source 3')">Data Source 3</button>
+      <button onclick="selectDataSource('Data Source 4')">Data Source 4</button>
+      <button onclick="selectDataSource('Data Source 5')">Data Source 5</button>
+      <button onclick="selectDataSource('Data Source 6')">Data Source 6</button>
+      <button onclick="selectDataSource('Data Source 7')">Data Source 7</button>
+      <button onclick="selectDataSource('Data Source 8')">Data Source 8</button>
+      <button onclick="selectDataSource('Data Source 9')">Data Source 9</button>
+      <button onclick="selectDataSource('Data Source 10')">Data Source 10</button>
     </div>
     <div id="ask-question">
       <button onclick="askQuestion()">Ask Question</button>
@@ -90,8 +90,26 @@
       }
     }
 
-    function connectToDataSource(dataSource) {
-      alert(`Connected to: ${dataSource}`);
+    function selectDataSource(dataSource) {
+      const selectionMethod = prompt(`How would you like to connect to ${dataSource}?\n1. Upload a file\n2. Attach an API`);
+
+      if (selectionMethod === '1') {
+        uploadFile(dataSource);
+      } else if (selectionMethod === '2') {
+        attachAPI(dataSource);
+      } else {
+        alert('Invalid selection. Please choose 1 or 2.');
+      }
+    }
+
+    function uploadFile(dataSource) {
+      alert(`Uploading a file for ${dataSource}`);
+      // Additional logic for file upload can be added here
+    }
+
+    function attachAPI(dataSource) {
+      alert(`Attaching API for ${dataSource}`);
+      // Additional logic for attaching API can be added here
     }
 
     function processQuestionWithNLP(question) {
