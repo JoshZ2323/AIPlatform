@@ -53,13 +53,6 @@
       border: 2px solid #3498db;
       display: none;
     }
-
-    #visualizations {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-    }
   </style>
 </head>
 <body>
@@ -81,51 +74,9 @@
       <button onclick="askQuestion()">Ask Question</button>
       <div id="answer-box"></div>
     </div>
-    <div id="visualizations">
-      <canvas id="lineChart" width="400" height="200"></canvas>
-      <canvas id="barChart" width="400" height="200"></canvas>
-    </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    // Dummy data for visualization
-    const lineChartData = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-      datasets: [
-        {
-          label: 'Data Trend',
-          borderColor: '#FF5733',
-          borderWidth: 2,
-          data: [50, 75, 60, 90, 30, 70, 20],
-        },
-      ],
-    };
-
-    const barChartData = {
-      labels: ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'],
-      datasets: [
-        {
-          label: 'Data Distribution',
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
-          data: [25, 15, 30, 20, 10],
-        },
-      ],
-    };
-
-    const lineChartContext = document.getElementById('lineChart').getContext('2d');
-    const barChartContext = document.getElementById('barChart').getContext('2d');
-
-    const lineChart = new Chart(lineChartContext, {
-      type: 'line',
-      data: lineChartData,
-    });
-
-    const barChart = new Chart(barChartContext, {
-      type: 'bar',
-      data: barChartData,
-    });
-
     function askQuestion() {
       const question = prompt('Ask a question:');
       if (question) {
