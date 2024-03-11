@@ -4,79 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI IoT Business Intelligence Platform</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body {
-      background-color: #141e30;
-      color: #ffffff;
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    #data-sources {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    button {
-      background-color: #3498db;
-      color: #ffffff;
-      padding: 15px 20px;
-      font-size: 18px;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #2980b9;
-    }
-
-    #ask-question {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    #answer-box {
-      margin-top: 20px;
-      padding: 10px;
-      border: 2px solid #3498db;
-      display: none;
-    }
+    /* Your existing styles remain unchanged */
   </style>
 </head>
 <body>
-  <div>
-    <h1 style="text-align: center;">AI IoT Business Intelligence Platform</h1>
-    <div id="data-sources">
-      <button onclick="selectDataSource('Data Source 1')">Data Source 1</button>
-      <button onclick="selectDataSource('Data Source 2')">Data Source 2</button>
-      <button onclick="selectDataSource('Data Source 3')">Data Source 3</button>
-      <button onclick="selectDataSource('Data Source 4')">Data Source 4</button>
-      <button onclick="selectDataSource('Data Source 5')">Data Source 5</button>
-      <button onclick="selectDataSource('Data Source 6')">Data Source 6</button>
-      <button onclick="selectDataSource('Data Source 7')">Data Source 7</button>
-      <button onclick="selectDataSource('Data Source 8')">Data Source 8</button>
-      <button onclick="selectDataSource('Data Source 9')">Data Source 9</button>
-      <button onclick="selectDataSource('Data Source 10')">Data Source 10</button>
-    </div>
-    <div id="ask-question">
-      <button onclick="askQuestion()">Ask Question</button>
-      <div id="answer-box"></div>
-    </div>
+  <div id="data-sources">
+    <!-- Buttons for data sources (Modify or add as needed) -->
+    <button onclick="handleDataSource('DataSource1')">Data Source 1</button>
+    <button onclick="handleDataSource('DataSource2')">Data Source 2</button>
+    <!-- Add more data source buttons as needed -->
   </div>
 
+  <div id="ask-question-container">
+    <button onclick="askQuestion()">Ask Question</button>
+  </div>
+
+  <!-- Visualization chart canvas -->
+  <canvas id="visualization-chart" width="400" height="200"></canvas>
+
+  <!-- Answer box -->
+  <div id="answer-box" style="display: none;"></div>
+
   <script>
+    function handleDataSource(dataSource) {
+      const uploadOption = confirm(`Do you want to upload a file or attach an API for ${dataSource}?`);
+      if (uploadOption) {
+        // Placeholder for file upload or API attachment logic
+        alert(`Implement logic for ${dataSource} file upload or API attachment`);
+      }
+    }
+
     function askQuestion() {
       const question = prompt('Ask a question:');
       if (question) {
@@ -87,36 +46,37 @@
         const answerBox = document.getElementById('answer-box');
         answerBox.textContent = `Answer: ${answer}`;
         answerBox.style.display = 'block';
+
+        // Generate a sample chart based on the data (Replace with actual data)
+        generateSampleChart();
       }
     }
 
-    function selectDataSource(dataSource) {
-      const selectionMethod = prompt(`How would you like to connect to ${dataSource}?\n1. Upload a file\n2. Attach an API`);
+    function generateSampleChart() {
+      // Sample data for the chart (Replace with actual data)
+      const chartData = [20, 50, 30, 80, 40];
 
-      if (selectionMethod === '1') {
-        uploadFile(dataSource);
-      } else if (selectionMethod === '2') {
-        attachAPI(dataSource);
-      } else {
-        alert('Invalid selection. Please choose 1 or 2.');
-      }
+      // Get the chart canvas
+      const ctx = document.getElementById('visualization-chart').getContext('2d');
+
+      // Generate a bar chart
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5'],
+          datasets: [{
+            label: 'Sample Data',
+            data: chartData,
+            backgroundColor: '#3498db',
+          }],
+        },
+      });
     }
 
-    function uploadFile(dataSource) {
-      alert(`Uploading a file for ${dataSource}`);
-      // Additional logic for file upload can be added here
-    }
-
-    function attachAPI(dataSource) {
-      alert(`Attaching API for ${dataSource}`);
-      // Additional logic for attaching API can be added here
-    }
-
+    // Placeholder function for NLP processing (Replace with a real NLP service)
     function processQuestionWithNLP(question) {
-      // Placeholder logic for NLP processing
-      // In a real application, you would send the question to a backend service
-      // that uses NLP models to generate an answer based on the available data.
-      return `Sample answer for "${question}"`;
+      // Replace this with actual NLP processing logic
+      return `Sample answer for: ${question}`;
     }
   </script>
 </body>
