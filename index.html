@@ -127,4 +127,46 @@
     });
 
     function askQuestion() {
-      const question = prompt('Ask a question
+      const question = prompt('Ask a question:');
+      if (question) {
+        // Placeholder for NLP processing (Replace this with a real NLP service)
+        const answer = processQuestionWithNLP(question);
+
+        // Display the answer
+        const answerBox = document.getElementById('answer-box');
+        answerBox.textContent = `Answer: ${answer}`;
+        answerBox.style.display = 'block';
+      }
+    }
+
+    function selectDataSource(dataSource) {
+      const selectionMethod = prompt(`How would you like to connect to ${dataSource}?\n1. Upload a file\n2. Attach an API`);
+
+      if (selectionMethod === '1') {
+        uploadFile(dataSource);
+      } else if (selectionMethod === '2') {
+        attachAPI(dataSource);
+      } else {
+        alert('Invalid selection. Please choose 1 or 2.');
+      }
+    }
+
+    function uploadFile(dataSource) {
+      alert(`Uploading a file for ${dataSource}`);
+      // Additional logic for file upload can be added here
+    }
+
+    function attachAPI(dataSource) {
+      alert(`Attaching API for ${dataSource}`);
+      // Additional logic for attaching API can be added here
+    }
+
+    function processQuestionWithNLP(question) {
+      // Placeholder logic for NLP processing
+      // In a real application, you would send the question to a backend service
+      // that uses NLP models to generate an answer based on the available data.
+      return `Sample answer for "${question}"`;
+    }
+  </script>
+</body>
+</html>
