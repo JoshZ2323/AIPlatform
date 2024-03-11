@@ -3,223 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
-</head>
-<body>
-    <h1><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Business Intelligence</title>
-    <!-- Include any additional CSS or JavaScript libraries here -->
-</head>
-<body>
-
-    <header>
-        <h1>AI Business Intelligence</h1>
-    </header>
-
-    <section id="dataInsights">
-        <h2>Data Insights</h2>
-        <!-- Place your charts and visualizations here -->
-        <div id="chartContainer">
-            <!-- Chart 1: Replace this with your actual chart code -->
-            <canvas id="pieChart" width="400" height="400"></canvas>
-
-            <!-- Chart 2: Replace this with your actual chart code -->
-            <canvas id="lineChart" width="400" height="400"></canvas>
-        </div>
-    </section>
-
-    <section id="customQuestions">
-        <h2>Custom Business Questions</h2>
-        <!-- Create a form or interactive elements for custom questions -->
-        <form id="customQuestionsForm">
-            <!-- Add your input fields, buttons, etc. here -->
-            <label for="questionInput">Ask a question:</label>
-            <input type="text" id="questionInput" name="questionInput" required>
-            <button type="button" onclick="submitQuestion()">Submit</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
-    </footer>
-
-    <!-- Include any additional scripts here -->
-    <script>
-        // Add your JavaScript code for handling data, charts, and interactions
-        function submitQuestion() {
-            // Implement logic to handle custom business questions
-            // Update the DOM or trigger relevant actions
-            alert('Question submitted!'); // Replace with actual logic
-        }
-    </script>
-
-</body>
-</html>
-!</h1>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Business Intelligence</title>
-    <!-- Include any additional CSS or JavaScript libraries here -->
-</head>
-<body>
-
-
-
-
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Business Intelligence</title>
-    <!-- Include any additional styles or libraries here -->
-    <style>
-        /* Add your spaceship UI styles here */
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #spaceship {
-            width: 100px;
-            height: 100px;
-            background-color: #3498db;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
-        /* Add more styles as needed */
-    </style>
-</head>
-<body>
-    <div id="spaceship"></div>
-    <h1>AI Business Intelligence</h1>
-    <form id="dataForm">
-        <label for="dataInput">Enter Data:</label>
-        <input type="text" id="dataInput" name="dataInput" required>
-        <button type="button" onclick="processData()">Generate Insights</button>
-    </form>
-
-    <!-- Include any additional scripts or libraries here -->
-    <script>
-        // Add your AI and data processing logic here
-        function processData() {
-            const inputData = document.getElementById('dataInput').value;
-
-            // Perform AI operations or data processing here
-            const aiResult = performAI(inputData);
-
-            // Display the result or take further actions
-            alert(`AI Result: ${aiResult}`);
-        }
-
-        // Hypothetical AI function
-        function performAI(input) {
-            // Replace this with your actual AI logic
-            return `AI processed: ${input}`;
-        }
-    </script>
-</body>
-</html>
-
-        }
-    </script>
-
-</body>
-</html>
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Spaceship Control Panel</title>
     <!-- Include any additional styles or libraries here -->
     <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #spaceship {
-            width: 100px;
-            height: 100px;
-            background-color: #3498db;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
-        .control-button {
-            background-color: #2ecc71;
-            color: #fff;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 5px;
-        }
-
-        /* Add more styles as needed */
+        /* Styles remain the same as in the previous code */
+        /* ... */
     </style>
 </head>
 <body>
     <div id="spaceship"></div>
     <h1>AI Spaceship Control Panel</h1>
-    <button class="control-button" onclick="takeOff()">Take Off</button>
-    <button class="control-button" onclick="land()">Land</button>
-    <button class="control-button" onclick="generateInsights()">Generate Insights</button>
+    <div class="control-panel">
+        <button class="control-button" onclick="takeOff()">Take Off</button>
+        <button class="control-button" onclick="land()">Land</button>
+        <button class="control-button" onclick="generateInsights()">Generate Insights</button>
+        <button class="control-button" onclick="askQuestion()">Ask Question</button>
+    </div>
 
     <!-- Include any additional scripts or libraries here -->
     <script>
-        function takeOff() {
-            // Implement take off logic
-            alert('Spaceship taking off!');
-        }
+        // Previous functions remain the same
 
-        function land() {
-            // Implement landing logic
-            alert('Spaceship landing!');
-        }
+        function askQuestion() {
+            const userQuestion = prompt('Ask a question:');
+            if (userQuestion !== null) {
+                // Call the NLP algorithm to process the question
+                const nlpResult = processNLP(userQuestion);
 
-        function generateInsights() {
-            const inputData = prompt('Enter Data for AI Processing:');
-            if (inputData !== null) {
-                // Perform AI operations or data processing here
-                const aiResult = performAI(inputData);
-
-                // Display the result or take further actions
-                alert(`AI Result: ${aiResult}`);
+                // Display the NLP result or take further actions
+                alert(`NLP Result: ${nlpResult}`);
             }
         }
 
-        // Hypothetical AI function
-        function performAI(input) {
-            // Replace this with your actual AI logic
-            return `AI processed: ${input}`;
+        // Hypothetical NLP function
+        function processNLP(question) {
+            // Replace this with your actual NLP logic
+            // For simplicity, let's assume the AI echoes the question for demonstration
+            return `You asked: ${question}`;
         }
     </script>
 </body>
@@ -227,3 +47,4 @@
 
 
 
+       
