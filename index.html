@@ -1,50 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Spaceship Control Panel</title>
-    <!-- Include any additional styles or libraries here -->
-    <style>
-        /* Styles remain the same as in the previous code */
-        /* ... */
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Business Intelligence</title>
+  <style>
+    body {
+      background-color: #141e30;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #spaceship-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    button {
+      background-color: #3498db;
+      color: #ffffff;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #result-container {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div id="spaceship"></div>
-    <h1>AI Spaceship Control Panel</h1>
-    <div class="control-panel">
-        <button class="control-button" onclick="takeOff()">Take Off</button>
-        <button class="control-button" onclick="land()">Land</button>
-        <button class="control-button" onclick="generateInsights()">Generate Insights</button>
-        <button class="control-button" onclick="askQuestion()">Ask Question</button>
+  <div>
+    <h1 style="text-align: center;">AI Business Intelligence</h1>
+    <div id="spaceship-controls">
+      <button onclick="askQuestion()">Ask Question</button>
+      <button onclick="connectToDataSource('DataSource1')">Connect to DataSource1</button>
+      <button onclick="connectToDataSource('DataSource2')">Connect to DataSource2</button>
+      <button onclick="connectToDataSource('DataSource3')">Connect to DataSource3</button>
+      <!-- Add more buttons for additional data sources as needed -->
     </div>
+    <div id="result-container">
+      <!-- Display results or insights here -->
+    </div>
+  </div>
 
-    <!-- Include any additional scripts or libraries here -->
-    <script>
-        // Previous functions remain the same
+  <script>
+    function askQuestion() {
+      // Implement the logic to ask a question and generate insights using NLP
+      const question = prompt('Ask a question:');
+      // Example: Display the result in the result-container
+      document.getElementById('result-container').innerHTML = `<p>AI Response: ${question} insights...</p>`;
+    }
 
-        function askQuestion() {
-            const userQuestion = prompt('Ask a question:');
-            if (userQuestion !== null) {
-                // Call the NLP algorithm to process the question
-                const nlpResult = processNLP(userQuestion);
-
-                // Display the NLP result or take further actions
-                alert(`NLP Result: ${nlpResult}`);
-            }
-        }
-
-        // Hypothetical NLP function
-        function processNLP(question) {
-            // Replace this with your actual NLP logic
-            // For simplicity, let's assume the AI echoes the question for demonstration
-            return `You asked: ${question}`;
-        }
-    </script>
+    function connectToDataSource(dataSource) {
+      // Implement the logic to connect to the specified data source
+      // Example: Display a message indicating the connection
+      document.getElementById('result-container').innerHTML = `<p>Connected to ${dataSource}</p>`;
+    }
+  </script>
 </body>
 </html>
-
-
-
-       
