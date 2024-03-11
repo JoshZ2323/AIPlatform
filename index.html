@@ -19,16 +19,28 @@
 
     #spaceship-controls {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       gap: 10px;
       align-items: center;
+    }
+
+    #data-inputs {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
     }
 
     button {
       background-color: #3498db;
       color: #ffffff;
-      padding: 10px 15px;
-      font-size: 16px;
+      padding: 15px 20px;
+      font-size: 18px;
       border: none;
       cursor: pointer;
       transition: background-color 0.3s;
@@ -50,16 +62,14 @@
 <body>
   <div>
     <h1 style="text-align: center;">AI Business Intelligence</h1>
+    <div id="data-inputs">
+      <input type="text" placeholder="Data Source 1">
+      <input type="text" placeholder="Data Source 2">
+      <input type="text" placeholder="Data Source 3">
+      <!-- Add more data input fields as needed -->
+    </div>
     <div id="spaceship-controls">
       <button onclick="askQuestion()">Ask Question</button>
-      <button onclick="connectToDataSource('DataSource1')">Connect to DataSource1</button>
-      <button onclick="connectToDataSource('DataSource2')">Connect to DataSource2</button>
-      <button onclick="connectToDataSource('DataSource3')">Connect to DataSource3</button>
-      <button onclick="connectToDataSource('DataSource4')">Connect to DataSource4</button>
-      <button onclick="connectToDataSource('DataSource5')">Connect to DataSource5</button>
-      <button onclick="connectToDataSource('DataSource6')">Connect to DataSource6</button>
-      <button onclick="connectToDataSource('DataSource7')">Connect to DataSource7</button>
-      <!-- Add more buttons for additional data sources as needed -->
     </div>
     <div id="result-container">
       <!-- Display results or insights here -->
