@@ -43,7 +43,15 @@
     #ask-question {
       margin-top: 20px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #answer-box {
+      margin-top: 20px;
+      padding: 10px;
+      border: 2px solid #3498db;
+      display: none;
     }
   </style>
 </head>
@@ -64,21 +72,33 @@
     </div>
     <div id="ask-question">
       <button onclick="askQuestion()">Ask Question</button>
+      <div id="answer-box"></div>
     </div>
   </div>
 
   <script>
     function askQuestion() {
-      // Logic to ask a question
       const question = prompt('Ask a question:');
       if (question) {
-        alert(`You asked: ${question}`);
+        // Placeholder for NLP processing (Replace this with a real NLP service)
+        const answer = processQuestionWithNLP(question);
+
+        // Display the answer
+        const answerBox = document.getElementById('answer-box');
+        answerBox.textContent = `Answer: ${answer}`;
+        answerBox.style.display = 'block';
       }
     }
 
     function connectToDataSource(dataSource) {
-      // Logic to connect to data source
       alert(`Connected to: ${dataSource}`);
+    }
+
+    function processQuestionWithNLP(question) {
+      // Placeholder logic for NLP processing
+      // In a real application, you would send the question to a backend service
+      // that uses NLP models to generate an answer based on the available data.
+      return `Sample answer for "${question}"`;
     }
   </script>
 </body>
