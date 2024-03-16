@@ -53,10 +53,33 @@
       border: 2px solid #3498db;
       display: none;
     }
+
+    #login-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #app {
+      display: none;
+    }
   </style>
 </head>
 <body>
-  <div>
+  <div id="login-screen">
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div id="app">
     <h1 style="text-align: center;">AI IoT Business Intelligence Platform</h1>
     <div id="data-sources">
       <button onclick="selectDataSource('Data Source 1')">Data Source 1</button>
@@ -77,20 +100,34 @@
   </div>
 
   <script>
-    function askQuestion() {
-      const question = prompt('Ask a question:');
-      if (question) {
-        // Placeholder for NLP processing (Replace this with a real NLP service)
-        const answer = processQuestionWithNLP(question);
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginForm = document.getElementById('login-form');
+      loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const username = event.target.username.value;
+        const password = event.target.password.value;
+        // Perform login validation here
+        if (username === 'admin' && password === 'password') {
+          // Show the app content if login is successful
+          document.getElementById('login-screen').style.display = 'none';
+          document.getElementById('app').style.display = 'block';
+        } else {
+          alert('Invalid username or password');
+        }
+      });
+    });
 
-        // Display the answer
+    async function askQuestion() {
+      const question = prompt('Ask a business question:');
+      if (question) {
+        const answer = await processQuestionWithAI(question);
         const answerBox = document.getElementById('answer-box');
         answerBox.textContent = `Answer: ${answer}`;
         answerBox.style.display = 'block';
       }
     }
 
-    function selectDataSource(dataSource) {
+    async function selectDataSource(dataSource) {
       const selectionMethod = prompt(`How would you like to connect to ${dataSource}?\n1. Upload a file\n2. Attach an API`);
 
       if (selectionMethod === '1') {
@@ -112,11 +149,11 @@
       // Additional logic for attaching API can be added here
     }
 
-    function processQuestionWithNLP(question) {
-      // Placeholder logic for NLP processing
+    async function processQuestionWithAI(question) {
+      // Placeholder logic for AI processing
       // In a real application, you would send the question to a backend service
-      // that uses NLP models to generate an answer based on the available data.
-      return `Sample answer for "${question}"`;
+      // that uses AI models to generate an answer based on the available data.
+      return 'Sample answer based on AI processing';
     }
   </script>
 </body>
