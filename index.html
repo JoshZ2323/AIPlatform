@@ -17,15 +17,6 @@
       margin: 0;
     }
 
-    #login-section {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    #login-text {
-      color: #ffffff;
-    }
-
     #data-sources {
       display: flex;
       flex-wrap: wrap;
@@ -62,57 +53,30 @@
       border: 2px solid #3498db;
       display: none;
     }
-
-    #login-info {
-      color: #ffffff;
-      text-align: center;
-    }
   </style>
 </head>
 <body>
-  <div id="login-section">
-    <h1>AI IoT Business Intelligence Platform</h1>
-    <p id="login-text">Login to access your private instance:</p>
-    <form id="login-form">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required><br><br>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required><br><br>
-      <button type="submit">Login</button>
-    </form>
-    <p id="login-info">Maverick Software creates software solutions for businesses using the most innovative technologies available. Our first product is the AI IoT Business Intelligence Platform. The platform integrates data from any source into the platform for AI processing. Our NLP Neural Network data processor answers your business questions easily based on your data. Simply ask the software questions and get valuable insights into your data.</p>
-  </div>
-
-  <div id="data-sources" style="display: none;">
-    <button onclick="selectDataSource('Data Source 1')">Data Source 1</button>
-    <button onclick="selectDataSource('Data Source 2')">Data Source 2</button>
-    <button onclick="selectDataSource('Data Source 3')">Data Source 3</button>
-    <button onclick="selectDataSource('Data Source 4')">Data Source 4</button>
-    <button onclick="selectDataSource('Data Source 5')">Data Source 5</button>
-    <button onclick="selectDataSource('Data Source 6')">Data Source 6</button>
-    <button onclick="selectDataSource('Data Source 7')">Data Source 7</button>
-    <button onclick="selectDataSource('Data Source 8')">Data Source 8</button>
-    <button onclick="selectDataSource('Data Source 9')">Data Source 9</button>
-    <button onclick="selectDataSource('Data Source 10')">Data Source 10</button>
-  </div>
-  
-  <div id="ask-question" style="display: none;">
-    <button onclick="askQuestion()">Ask Question</button>
-    <div id="answer-box"></div>
+  <div>
+    <h1 style="text-align: center;">AI IoT Business Intelligence Platform</h1>
+    <div id="data-sources">
+      <button onclick="selectDataSource('Data Source 1')">Data Source 1</button>
+      <button onclick="selectDataSource('Data Source 2')">Data Source 2</button>
+      <button onclick="selectDataSource('Data Source 3')">Data Source 3</button>
+      <button onclick="selectDataSource('Data Source 4')">Data Source 4</button>
+      <button onclick="selectDataSource('Data Source 5')">Data Source 5</button>
+      <button onclick="selectDataSource('Data Source 6')">Data Source 6</button>
+      <button onclick="selectDataSource('Data Source 7')">Data Source 7</button>
+      <button onclick="selectDataSource('Data Source 8')">Data Source 8</button>
+      <button onclick="selectDataSource('Data Source 9')">Data Source 9</button>
+      <button onclick="selectDataSource('Data Source 10')">Data Source 10</button>
+    </div>
+    <div id="ask-question">
+      <button onclick="askQuestion()">Ask Question</button>
+      <div id="answer-box"></div>
+    </div>
   </div>
 
   <script>
-    // Function to handle login form submission
-    document.getElementById('login-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      // Perform login authentication here
-      // If successful, show data sources and ask question section
-      document.getElementById('data-sources').style.display = 'flex';
-      document.getElementById('ask-question').style.display = 'flex';
-      document.getElementById('login-section').style.display = 'none';
-    });
-
-    // Function to ask a question
     async function askQuestion() {
       const question = prompt('Ask a business question:');
       if (question) {
