@@ -17,13 +17,25 @@
       margin: 0;
     }
 
-    #data-sources {
+    .container {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
+    }
+
+    .login-form {
+      background-color: #2c3e50;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
     }
 
     button {
@@ -32,6 +44,7 @@
       padding: 15px 20px;
       font-size: 18px;
       border: none;
+      border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s;
     }
@@ -39,41 +52,37 @@
     button:hover {
       background-color: #2980b9;
     }
-
-    #ask-question {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    #answer-box {
-      margin-top: 20px;
-      padding: 10px;
-      border: 2px solid #3498db;
-      display: none;
-    }
   </style>
 </head>
 <body>
-  <div>
-    <h1 style="text-align: center;">AI IoT Business Intelligence Platform</h1>
-    <div id="data-sources">
-      <button onclick="selectDataSource('Data Source 1')">Data Source 1</button>
-      <button onclick="selectDataSource('Data Source 2')">Data Source 2</button>
-      <button onclick="selectDataSource('Data Source 3')">Data Source 3</button>
-      <button onclick="selectDataSource('Data Source 4')">Data Source 4</button>
-      <button onclick="selectDataSource('Data Source 5')">Data Source 5</button>
-      <button onclick="selectDataSource('Data Source 6')">Data Source 6</button>
-      <button onclick="selectDataSource('Data Source 7')">Data Source 7</button>
-      <button onclick="selectDataSource('Data Source 8')">Data Source 8</button>
-      <button onclick="selectDataSource('Data Source 9')">Data Source 9</button>
-      <button onclick="selectDataSource('Data Source 10')">Data Source 10</button>
+  <div class="container">
+    <h1>AI IoT Business Intelligence Platform</h1>
+    <div class="login-form">
+      <h2>Login</h2>
+      <form>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button type="submit">Login</button>
+      </form>
+      <p style="color: white;">Maverick Software creates software solutions for businesses using the most innovative technologies available. Our first product is the AI IoT Business Intelligence Platform. The platform integrates data from any source into the platform for AI processing. Our NLP Neural Network data processor answers your business questions easily based on your data. Simply ask the software questions and get valuable insights into your data.</p>
     </div>
-    <div id="ask-question">
-      <button onclick="askQuestion()">Ask Question</button>
-      <div id="answer-box"></div>
-    </div>
+  </div>
+  
+  <div id="data-sources">
+    <button onclick="selectDataSource('Data Source 1')">Data Source 1</button>
+    <button onclick="selectDataSource('Data Source 2')">Data Source 2</button>
+    <button onclick="selectDataSource('Data Source 3')">Data Source 3</button>
+    <button onclick="selectDataSource('Data Source 4')">Data Source 4</button>
+    <button onclick="selectDataSource('Data Source 5')">Data Source 5</button>
+    <button onclick="selectDataSource('Data Source 6')">Data Source 6</button>
+    <button onclick="selectDataSource('Data Source 7')">Data Source 7</button>
+    <button onclick="selectDataSource('Data Source 8')">Data Source 8</button>
+    <button onclick="selectDataSource('Data Source 9')">Data Source 9</button>
+    <button onclick="selectDataSource('Data Source 10')">Data Source 10</button>
+  </div>
+  <div id="ask-question">
+    <button onclick="askQuestion()">Ask Question</button>
+    <div id="answer-box"></div>
   </div>
 
   <script>
